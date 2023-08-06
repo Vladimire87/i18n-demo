@@ -38,11 +38,11 @@ en:
         author: "Your name"
         message: "Message"
   global:
-    messages:
-      errors:
-        one: "One error prohibited this feedback from being saved"
-        other: "%{count} error prohibited this feedback from being saved"
     forms:
+      messages:
+        errors:
+          one: "One error prohibited this feedback from being saved"
+          other: "%{count} error prohibited this feedback from being saved"
       submit: "Submit"
     menu:
       home: "Home"
