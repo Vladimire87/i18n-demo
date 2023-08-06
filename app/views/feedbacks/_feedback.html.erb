@@ -1,6 +1,7 @@
 <article>
   <em>
-    <%= tag.time feedback.created_at, datetime: feedback.created_at %><br>
+    <%= tag.time l(feedback.created_at, format: :long), datetime: feedback.created_at %><br>
+    <%= t 'feedback.posted_by', author: feedback.author %>
   </em>
   <p>
     <%= feedback.message %>
