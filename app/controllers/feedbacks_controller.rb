@@ -24,11 +24,12 @@ class FeedbacksController < ApplicationController
   def create
     @feedback = Feedback.new(feedback_params)
 
-  if @feedback.save
-    redirect_to new_feedback_path
-  else
-    @feedbacks = Feedback.order created_at: :desc
-    render :new
+    if @feedback.save
+      redirect_to new_feedback_path
+    else
+      @feedbacks = Feedback.order created_at: :desc
+      render :new
+    end
   end
 
   # PATCH/PUT /feedbacks/1 or /feedbacks/1.json
