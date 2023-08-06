@@ -29,6 +29,6 @@
 # To learn more, please read the Rails Internationalization guide
 # available at https://guides.rubyonrails.org/i18n.html.
 
-en:
-  welcome: "Welcome!"
-  services_html: "We provide some fancy services to <em>good people</em>."
+ru:
+  welcome: "Добро пожаловать!"
+  services_html: "Мы предостовляем услуги для <em>хороших людей</em>."
