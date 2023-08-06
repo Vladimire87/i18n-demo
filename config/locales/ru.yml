@@ -30,5 +30,18 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 ru:
+  activerecord:
+    models:
+      feedback: "Отзыв"
+    attributes:
+      feedback:
+        author: "Ваше имя"
+        message: "Сообщение"
+  global:
+    forms:
+      submit: "Отправить"
+    menu:
+      home: "Главная"
+      feedback: "Отзывы"
   welcome: "Добро пожаловать!"
   services_html: "Мы предостовляем услуги для <em>хороших людей</em>."

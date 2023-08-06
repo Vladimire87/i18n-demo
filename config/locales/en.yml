@@ -30,5 +30,20 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  welcome: "Welcome!"
-  services_html: "We provide some fancy services to <em>good people</em>."
+  activerecord:
+    models:
+      feedback: "Feedback"
+    attributes:
+      feedback:
+        author: "Your name"
+        message: "Message"
+  global:
+    forms:
+      submit: "Submit"
+    menu:
+      home: "Home"
+      feedback: "Feedback"
+  static_pages:
+    index:
+      welcome: "Welcome!"
+      services_html: "We provide some fancy services to <em>good people</em>."
