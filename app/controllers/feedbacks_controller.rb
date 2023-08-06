@@ -1,5 +1,5 @@
 class FeedbacksController < ApplicationController
-  before_action :set_feedback, only: %i[ show edit update destroy ]
+  before_action :set_feedback, only: %i[show edit update destroy]
 
   # GET /feedbacks or /feedbacks.json
   def index
@@ -13,6 +13,7 @@ class FeedbacksController < ApplicationController
   # GET /feedbacks/new
   def new
     @feedback = Feedback.new
+    @feedbacks = Feedback.order created_at: :desc
   end
 
   # GET /feedbacks/1/edit
@@ -23,15 +24,11 @@ class FeedbacksController < ApplicationController
   def create
     @feedback = Feedback.new(feedback_params)
 
-    respond_to do |format|
-      if @feedback.save
-        format.html { redirect_to feedback_url(@feedback), notice: "Feedback was successfully created." }
-        format.json { render :show, status: :created, location: @feedback }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @feedback.errors, status: :unprocessable_entity }
-      end
-    end
+  if @feedback.save
+    redirect_to new_feedback_path
+  else
+    @feedbacks = Feedback.order created_at: :desc
+    render :new
   end
 
   # PATCH/PUT /feedbacks/1 or /feedbacks/1.json
@@ -58,13 +55,14 @@ class FeedbacksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_feedback
-      @feedback = Feedback.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def feedback_params
-      params.require(:feedback).permit(:author, :message)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_feedback
+    @feedback = Feedback.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def feedback_params
+    params.require(:feedback).permit(:author, :message)
+  end
 end
