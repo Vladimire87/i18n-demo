@@ -28,7 +28,7 @@ class FeedbacksController < ApplicationController
       redirect_to new_feedback_path
     else
       @feedbacks = Feedback.order created_at: :desc
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
