@@ -1,12 +1,9 @@
-<div id="<%= dom_id feedback %>">
+<article>
+  <em>
+    <%= tag.time feedback.created_at, datetime: feedback.created_at %><br>
+  </em>
   <p>
-    <strong>Author:</strong>
-    <%= feedback.author %>
-  </p>
-
-  <p>
-    <strong>Message:</strong>
     <%= feedback.message %>
   </p>
-
-</div>
+  <hr>
+</article>
